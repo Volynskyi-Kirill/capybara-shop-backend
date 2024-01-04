@@ -4,6 +4,7 @@ import { Model } from 'mongoose';
 import { CreateProductDto } from './dto/create-product.dto';
 import { UpdateProductDto } from './dto/update-product.dto';
 import { Product, ProductDocument } from './product.schema';
+import { ProductCategory } from './utils/product.enum';
 
 @Injectable()
 export class ProductService {
@@ -21,6 +22,10 @@ export class ProductService {
 
   async findById(id: string) {
     return await this.productModel.findById(id);
+  }
+
+  async findByCategory(category: ProductCategory) {
+    return await this.productModel.find({ category });
   }
 
   async update(id: string, updateProductDto: UpdateProductDto) {

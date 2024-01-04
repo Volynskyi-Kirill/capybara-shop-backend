@@ -6,11 +6,13 @@ import {
   Patch,
   Param,
   Delete,
+  Query,
 } from '@nestjs/common';
 import { ProductService } from './product.service';
 import { CreateProductDto } from './dto/create-product.dto';
 import { UpdateProductDto } from './dto/update-product.dto';
 import { ApiTags } from '@nestjs/swagger';
+import { ProductCategory } from './utils/product.enum';
 
 @ApiTags('product')
 @Controller('product')
@@ -25,6 +27,11 @@ export class ProductController {
   @Get()
   findAll() {
     return this.productService.findAll();
+  }
+
+  @Get('/by-category')
+  findByCategory(@Query('category') category: ProductCategory) {
+    return this.productService.findByCategory(category);
   }
 
   @Get(':id')
