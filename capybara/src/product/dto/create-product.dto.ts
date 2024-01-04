@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { ClothingSize } from '../utils/product.enum';
+import { ClothingSize, ProductCategory } from '../utils/product.enum';
 
 export class CreateProductDto {
   @ApiProperty()
@@ -10,4 +10,6 @@ export class CreateProductDto {
   images: string;
   @ApiProperty()
   price: number;
+  @ApiProperty()
+  category: ProductCategory;
 }
