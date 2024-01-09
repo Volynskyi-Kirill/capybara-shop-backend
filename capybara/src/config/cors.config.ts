@@ -1,5 +1,5 @@
 export const CorsConfig = {
-  origin: ['https://capybara-sand.vercel.app'],
+  origin: '*',
   methods: 'GET,PUT,PATCH,POST,DELETE',
   allowedHeaders: ['Content-Type'],
 };
