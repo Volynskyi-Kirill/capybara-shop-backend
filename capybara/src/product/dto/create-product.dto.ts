@@ -7,9 +7,17 @@ export class CreateProductDto {
   @ApiProperty()
   size: ClothingSize[];
   @ApiProperty()
-  images: string;
+  images: [string];
   @ApiProperty()
   price: number;
   @ApiProperty()
   category: ProductCategory;
+  @ApiProperty()
+  colors: [string];
+  @ApiProperty()
+  availability: boolean;
+  @ApiProperty()
+  description: string;
+  @ApiProperty()
+  deliveryInfo: string;
 }
